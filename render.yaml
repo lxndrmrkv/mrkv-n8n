@@ -23,7 +23,7 @@ services:
       - key: N8N_PORT
         value: "10000"
       - key: N8N_PUBLIC_URL
-        value: https://mrkv-n8n.onrender.com
+        value: https://n8n-7osp.onrender.com
       - key: N8N_ENCRYPTION_KEY
         value: mrkvexchange12345678901234567890
       - key: N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS
