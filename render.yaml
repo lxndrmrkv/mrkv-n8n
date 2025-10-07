@@ -3,7 +3,8 @@ services:
     name: mrkv-n8n
     env: docker
     region: oregon
-    dockerfilePath: ./Dockerfile
+    image:
+      url: n8nio/n8n
     envVars:
       - key: DB_TYPE
         value: postgresdb
