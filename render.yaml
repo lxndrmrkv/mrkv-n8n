@@ -1,0 +1,31 @@
+services:
+  - type: web
+    name: mrkv-n8n
+    env: docker
+    region: oregon
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: DB_TYPE
+        value: postgresdb
+      - key: DB_POSTGRES_HOST
+        value: dpg-d3ifstali9vc73eq9nmg-a.oregon-postgres.render.com
+      - key: DB_POSTGRES_PORT
+        value: "5432"
+      - key: DB_POSTGRES_USER
+        value: n8n_user
+      - key: DB_POSTGRES_PASSWORD
+        value: Y51XfD1l9qPdUmYJ4hjVJPRywKhHmvhH
+      - key: DB_POSTGRES_DATABASE
+        value: n8n_db_54yq
+      - key: N8N_HOST
+        value: 0.0.0.0
+      - key: N8N_PORT
+        value: "10000"
+      - key: N8N_PUBLIC_URL
+        value: https://n8n1-7osp.onrender.com
+      - key: N8N_ENCRYPTION_KEY
+        value: mrkvexchange12345678901234567890
+      - key: N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS
+        value: "false"
+      - key: NODE_ENV
+        value: production
