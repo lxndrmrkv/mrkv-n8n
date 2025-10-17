@@ -1,5 +1,6 @@
 import express from "express";
 import crypto from "crypto";
+import fetch from "node-fetch"; // ✅ добавлено, чтобы получать внешний IP
 
 const app = express();
 app.use(express.json());
@@ -25,6 +26,17 @@ app.post("/sign", (req, res) => {
 
 // ✅ Проверка статуса
 app.get("/", (_, res) => res.send("✅ Bybit Signer is running"));
+
+// ✅ Новый эндпоинт для получения внешнего IP Railway
+app.get("/ip", async (req, res) => {
+  try {
+    const ip = await fetch("https://ifconfig.me/ip").then(r => r.text());
+    res.send(`Your external IP: ${ip}`);
+  } catch (err) {
+    console.error("IP fetch error:", err);
+    res.status(500).send("Unable to fetch IP");
+  }
+});
 
 // 🚀 Запуск
 const PORT = process.env.PORT || 3000;
